@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Sentiment Analysis</title>
+</head>
+<body>
+    <h1>Enter a Tweet to Analyze</h1>
+    <form method="POST" action="/sub">
+        <textarea name="tweet" placeholder="Enter tweet here..." required>{{ tweet if tweet else "" }}</textarea><br><br>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if sentiment %}
+        <h2>Prediction: {{ sentiment }}</h2>
+    {% endif %}
+</body>
+</html>
